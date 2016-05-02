@@ -3,22 +3,46 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body ng-controller="ImageController as ic">
-	<div ng-controller="WeatherController as wc">
+<body ng-controller="ImageController as ic" class="image-responsive" style="background-image: url('{{ic.imageData.url}}'); background-size: 100%;">
 
+	<div class="date">
+		<div class="time">{{ic.time | date : 'hh:mm:ss'}}</div>
 	</div>
 
-	<div ng-controller="QuoteController as qc">
-
+	<div ng-controller="WeatherController as wc" class="weather" style="text-align: center">
+		<div><i class="fa fa-sun-o" aria-hidden="true"></i> <strong style="font-size: 30px;">{{wc.temp}}°</strong></div>
+		<div>{{wc.weather.name}}</div>
 	</div>
 
-	<div ng-controller="TodoController as tc">
-
+	<div ng-controller="QuoteController as qc" class="quote">
+		<div class="quoteChild">"{{qc.quote.quote}}"</div>
+		<div class="author"> - {{qc.quote.author}}</div>
 	</div>
 
+	<div ng-controller="TodoController as tc" class="todo">
+		<a type="button" ng-click="toggle()">Todo</a>
+
+		<div ng-show="myList">
+			<h4 class="listTracker">{{tc.list.length}} to do</h4>
+			<div ng-repeat="task in tc.list" class="todoList">
+				<div class="row">
+					<div class="col-sm-12 tasks">{{task.task}}
+						<a class="glyphicon glyphicon-remove" ng-click="tc.removeTask($index)"></a>
+					</div>
+				</div>
+			</div>
+			<form class="form form-inline" ng-submit="tc.addTask(tc.newTask)">
+				<input type="text" ng-model="tc.newTask.task" placeholder="New Todo" class="form-control">
+				<button class="btn btn-success btn-sm" type="submit">Add Todo</button>
+			</form>
+		</div>
+
+	</div>
 
 
 

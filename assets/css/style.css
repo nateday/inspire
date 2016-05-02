@@ -1,0 +1,77 @@
+body {
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.quote {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.quoteChild {
+    display: inline-block;
+}
+
+.author {
+    display: none;
+    width: 500px;
+    margin: 0px auto;
+}
+
+.quote:hover .author{
+    display:block;
+}
+
+.weather {
+    position: fixed;
+    right: 0;
+    margin: 10px;
+}
+
+.date {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-size: 150px;
+    margin-top: 250px;
+}
+
+.time {
+    display: inline-block;
+}
+
+.todo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.todoList {
+    background-color: black;
+    opacity: 0.7;
+}
+
+.listTracker {
+    background-color: black;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.glyphicon.glyphicon-remove {
+    float: right;
+    margin: 3px;
+    margin-right: 20px;
+}
+
+.tasks {
+    margin: 3px;
+    margin-left: 10px;
+}

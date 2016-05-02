@@ -6,5 +6,4 @@ app.controller('QuoteController', function(QuoteService){
 	// DO NOT EDIT ABOVE
 	
 	
-	
 })

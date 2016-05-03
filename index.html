@@ -15,7 +15,7 @@
 	</div>
 
 	<div ng-controller="WeatherController as wc" class="weather" style="text-align: center">
-		<div><i class="fa fa-sun-o" aria-hidden="true"></i> <strong style="font-size: 30px;">{{wc.temp}}°</strong></div>
+		<div ng-click="wc.toggleUnits()"><i class="fa fa-sun-o" aria-hidden="true"></i> <strong style="font-size: 30px;">{{wc.temp}}</strong></div>
 		<div>{{wc.weather.name}}</div>
 	</div>
 
@@ -28,8 +28,8 @@
 		<a type="button" ng-click="toggle()">Todo</a>
 
 		<div ng-show="myList">
-			<h4 class="listTracker">{{tc.list.length}} to do</h4>
-			<div ng-repeat="task in tc.list" class="todoList">
+			<h4 class="listTracker">{{tc.todos.length}} to do</h4>
+			<div ng-repeat="task in tc.todos" class="todoList">
 				<div class="row">
 					<div class="col-sm-12 tasks">{{task.task}}
 						<a class="glyphicon glyphicon-remove" ng-click="tc.removeTask($index)"></a>
